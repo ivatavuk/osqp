@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R &mdash; OSQP  documentation</title>
@@ -14,9 +14,8 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -46,12 +45,16 @@ content="https://osqp.org/docs/_static/img/logo.png">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -97,11 +100,11 @@ content="https://osqp.org/docs/_static/img/logo.png">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Get started</a> &raquo;</li>
-      <li>R</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Get started</a></li>
+      <li class="breadcrumb-item active">R</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/get_started/r.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/osqp/osqp/blob/master/docs/get_started/r.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -110,9 +113,9 @@ content="https://osqp.org/docs/_static/img/logo.png">
            <div itemprop="articleBody">
              
   <section id="r">
-<h1>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h1>
+<h1>R<a class="headerlink" href="#r" title="Permalink to this heading">¶</a></h1>
 <section id="binaries">
-<h2>Binaries<a class="headerlink" href="#binaries" title="Permalink to this headline">¶</a></h2>
+<h2>Binaries<a class="headerlink" href="#binaries" title="Permalink to this heading">¶</a></h2>
 <p>A pre-compiled version of the OSQP R interface can be installed directly from within R.   Note that this will install the OSQP interface from the current CRAN repository, which may not be the most up-to-date version:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;osqp&quot;</span><span class="p">)</span>
 </pre></div>
@@ -120,20 +123,20 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <p>The pre-compiled binaries can also be downloaded <a class="reference external" href="https://cran.r-project.org/web/packages/osqp/">directly from the CRAN server</a>.</p>
 </section>
 <section id="from-sources">
-<h2>From Sources<a class="headerlink" href="#from-sources" title="Permalink to this headline">¶</a></h2>
+<h2>From Sources<a class="headerlink" href="#from-sources" title="Permalink to this heading">¶</a></h2>
 <p>If you would like to use the most recent version of OSQP-R and have access to git on your machine along with a suitable compiler, then you can do the following from within a terminal:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">recursive</span> <span class="n">https</span><span class="o">://</span><span class="n">github.com</span><span class="o">/</span><span class="n">osqp</span><span class="o">/</span><span class="n">osqp</span><span class="o">-</span><span class="n">r.git</span>
-<span class="n">cd</span> <span class="n">osqp</span><span class="o">-</span><span class="n">r</span>
-<span class="n">R</span> <span class="n">CMD</span> <span class="n">install</span> <span class="n">.</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="o">--</span><span class="n">recursive</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">github.com</span><span class="o">/</span><span class="n">osqp</span><span class="o">/</span><span class="n">osqp</span><span class="o">-</span><span class="n">r.git</span>
+<span class="n">cd</span><span class="w"> </span><span class="n">osqp</span><span class="o">-</span><span class="n">r</span>
+<span class="n">R</span><span class="w"> </span><span class="n">CMD</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">.</span>
 </pre></div>
 </div>
 </section>
 <section id="from-sources-within-r">
-<h2>From Sources (within R)<a class="headerlink" href="#from-sources-within-r" title="Permalink to this headline">¶</a></h2>
+<h2>From Sources (within R)<a class="headerlink" href="#from-sources-within-r" title="Permalink to this heading">¶</a></h2>
 <p>If you would like to install the latest version directly from with R (e.g.because you do not have <code class="docutils literal notranslate"><span class="pre">git</span></code> installed) and have a suitable compiler, then you can do the following from within R:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;remotes&quot;</span><span class="p">)</span>
 <span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;r-lib/remotes#103&quot;</span><span class="p">)</span>
-<span class="n">remotes</span><span class="o">::</span><span class="nf">install_git</span><span class="p">(</span><span class="s">&quot;git://github.com/OxfordControl/osqp-r&quot;</span><span class="p">,</span><span class="n">submodules</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">remotes</span><span class="o">::</span><span class="nf">install_git</span><span class="p">(</span><span class="s">&quot;git://github.com/OxfordControl/osqp-r&quot;</span><span class="p">,</span><span class="n">submodules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that the second line above is necessary because the “remotes” package in R does not currently support recursive cloning of git submodules.</p>

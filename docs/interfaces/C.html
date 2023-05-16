@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C &mdash; OSQP  documentation</title>
@@ -14,10 +14,9 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -47,12 +46,16 @@ content="https://osqp.org/docs/_static/img/logo.png">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -102,11 +105,11 @@ content="https://osqp.org/docs/_static/img/logo.png">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Interfaces</a> &raquo;</li>
-      <li>C</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Interfaces</a></li>
+      <li class="breadcrumb-item active">C</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/interfaces/C.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/osqp/osqp/blob/master/docs/interfaces/C.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -115,9 +118,9 @@ content="https://osqp.org/docs/_static/img/logo.png">
            <div itemprop="articleBody">
              
   <section id="c">
-<span id="c-interface"></span><h1>C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h1>
+<span id="c-interface"></span><h1>C<a class="headerlink" href="#c" title="Permalink to this heading">¶</a></h1>
 <section id="main-solver-api">
-<span id="c-main-api"></span><h2>Main solver API<a class="headerlink" href="#main-solver-api" title="Permalink to this headline">¶</a></h2>
+<span id="c-main-api"></span><h2>Main solver API<a class="headerlink" href="#main-solver-api" title="Permalink to this heading">¶</a></h2>
 <p>The main C API is imported from the header <code class="code docutils literal notranslate"><span class="pre">osqp.h</span></code> and provides the following functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv410osqp_setupPP13OSQPWorkspacePK8OSQPDataPK12OSQPSettings">
@@ -137,14 +140,14 @@ content="https://osqp.org/docs/_static/img/logo.png">
 </p>
 <p>NB: This is the only function that allocates dynamic memory and is not used during code generation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>workp</strong> – Solver workspace pointer </p></li>
 <li><p><strong>data</strong> – Problem data </p></li>
 <li><p><strong>settings</strong> – Solver settings </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag for errors (0 if no errors) </p>
 </dd>
 </dl>
@@ -156,13 +159,13 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <dd><p>Solve quadratic program</p>
 <p>The final solver information is stored in the <em>work-&gt;info</em> structure</p>
 <p>The solution is stored in the <em>work-&gt;solution</em> structure</p>
-<p>If the problem is primal infeasible, the certificate is stored in <em>work-&gt;delta_y</em> </p>
-<p>If the problem is dual infeasible, the certificate is stored in <em>work-&gt;delta_x</em> </p>
+<p>If the problem is primal infeasible, the certificate is stored in <em>work-&gt;delta_y</em></p>
+<p>If the problem is dual infeasible, the certificate is stored in <em>work-&gt;delta_x</em></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>work</strong> – Workspace allocated </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag for errors </p>
 </dd>
 </dl>
@@ -174,10 +177,10 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <dd><p>Cleanup workspace by deallocating memory</p>
 <p>This function is not used in code generation </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>work</strong> – Workspace </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag for errors </p>
 </dd>
 </dl>
@@ -185,24 +188,24 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="sublevel-api">
-<span id="c-sublevel-api"></span><h2>Sublevel API<a class="headerlink" href="#sublevel-api" title="Permalink to this headline">¶</a></h2>
+<span id="c-sublevel-api"></span><h2>Sublevel API<a class="headerlink" href="#sublevel-api" title="Permalink to this heading">¶</a></h2>
 <p>Sublevel C API is also imported from the header <code class="code docutils literal notranslate"><span class="pre">osqp.h</span></code> and provides the following functions</p>
 <section id="warm-start">
-<h3>Warm start<a class="headerlink" href="#warm-start" title="Permalink to this headline">¶</a></h3>
+<h3>Warm start<a class="headerlink" href="#warm-start" title="Permalink to this heading">¶</a></h3>
 <p>OSQP automatically warm starts primal and dual variables from the previous QP solution. If you would like to warm start their values manually, you can use</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv415osqp_warm_startP13OSQPWorkspacePK7c_floatPK7c_float">
 <span id="_CPPv315osqp_warm_startP13OSQPWorkspacePK7c_floatPK7c_float"></span><span id="_CPPv215osqp_warm_startP13OSQPWorkspacePK7c_floatPK7c_float"></span><span id="osqp_warm_start__OSQPWorkspaceP.c_floatCP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1a3837d8cf590d7dfc6232bb7882dd8628"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_warm_start</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">x</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415osqp_warm_startP13OSQPWorkspacePK7c_floatPK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Warm start primal and dual variables </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace structure </p></li>
 <li><p><strong>x</strong> – Primal variable </p></li>
 <li><p><strong>y</strong> – Dual variable </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag </p>
 </dd>
 </dl>
@@ -213,13 +216,13 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <span id="_CPPv317osqp_warm_start_xP13OSQPWorkspacePK7c_float"></span><span id="_CPPv217osqp_warm_start_xP13OSQPWorkspacePK7c_float"></span><span id="osqp_warm_start_x__OSQPWorkspaceP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1a846c47ab273db3b33101f67ae046257c"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_warm_start_x</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417osqp_warm_start_xP13OSQPWorkspacePK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Warm start primal variable </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace structure </p></li>
 <li><p><strong>x</strong> – Primal variable </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag </p>
 </dd>
 </dl>
@@ -230,13 +233,13 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <span id="_CPPv317osqp_warm_start_yP13OSQPWorkspacePK7c_float"></span><span id="_CPPv217osqp_warm_start_yP13OSQPWorkspacePK7c_float"></span><span id="osqp_warm_start_y__OSQPWorkspaceP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1af927004f14a07c019153238141c6c805"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_warm_start_y</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417osqp_warm_start_yP13OSQPWorkspacePK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Warm start dual variable </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace structure </p></li>
 <li><p><strong>y</strong> – Dual variable </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag </p>
 </dd>
 </dl>
@@ -244,20 +247,20 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="update-problem-data">
-<span id="c-cpp-update-data"></span><h3>Update problem data<a class="headerlink" href="#update-problem-data" title="Permalink to this headline">¶</a></h3>
+<span id="c-cpp-update-data"></span><h3>Update problem data<a class="headerlink" href="#update-problem-data" title="Permalink to this heading">¶</a></h3>
 <p>Problem data can be updated without executing the setup again using the following functions.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420osqp_update_lin_costP13OSQPWorkspacePK7c_float">
 <span id="_CPPv320osqp_update_lin_costP13OSQPWorkspacePK7c_float"></span><span id="_CPPv220osqp_update_lin_costP13OSQPWorkspacePK7c_float"></span><span id="osqp_update_lin_cost__OSQPWorkspaceP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1afe3b2e8fc11a75a90f62a1348710624a"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_update_lin_cost</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">q_new</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420osqp_update_lin_costP13OSQPWorkspacePK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Update linear cost in the problem </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace </p></li>
 <li><p><strong>q_new</strong> – New linear cost </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag for errors and warnings </p>
 </dd>
 </dl>
@@ -268,13 +271,13 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <span id="_CPPv323osqp_update_lower_boundP13OSQPWorkspacePK7c_float"></span><span id="_CPPv223osqp_update_lower_boundP13OSQPWorkspacePK7c_float"></span><span id="osqp_update_lower_bound__OSQPWorkspaceP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1a7b62869a3a168ff793659ec3c4f4b9df"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_update_lower_bound</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">l_new</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423osqp_update_lower_boundP13OSQPWorkspacePK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Update lower bound in the problem constraints </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace </p></li>
 <li><p><strong>l_new</strong> – New lower bound </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag: 1 if new lower bound is not &lt;= than upper bound </p>
 </dd>
 </dl>
@@ -285,13 +288,13 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <span id="_CPPv323osqp_update_upper_boundP13OSQPWorkspacePK7c_float"></span><span id="_CPPv223osqp_update_upper_boundP13OSQPWorkspacePK7c_float"></span><span id="osqp_update_upper_bound__OSQPWorkspaceP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1a7d3fbc2531ecd4cddece5897a4368f23"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_update_upper_bound</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">u_new</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423osqp_update_upper_boundP13OSQPWorkspacePK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Update upper bound in the problem constraints </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace </p></li>
 <li><p><strong>u_new</strong> – New upper bound </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag: 1 if new upper bound is not &gt;= than lower bound </p>
 </dd>
 </dl>
@@ -302,14 +305,14 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <span id="_CPPv318osqp_update_boundsP13OSQPWorkspacePK7c_floatPK7c_float"></span><span id="_CPPv218osqp_update_boundsP13OSQPWorkspacePK7c_floatPK7c_float"></span><span id="osqp_update_bounds__OSQPWorkspaceP.c_floatCP.c_floatCP"></span><span class="target" id="df/d16/osqp_8h_1a207715d769b3c9cca9cdec0eb5e03301"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">osqp_update_bounds</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413OSQPWorkspace" title="OSQPWorkspace"><span class="n"><span class="pre">OSQPWorkspace</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">work</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">l_new</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">c_float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">u_new</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418osqp_update_boundsP13OSQPWorkspacePK7c_floatPK7c_float" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Update lower and upper bounds in the problem constraints </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace </p></li>
 <li><p><strong>l_new</strong> – New lower bound </p></li>
 <li><p><strong>u_new</strong> – New upper bound </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Exitflag: 1 if new lower bound is not &lt;= than new upper bound </p>
 </dd>
 </dl>
@@ -321,7 +324,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <dd><p>Update elements of matrix P (upper triangular) without changing sparsity structure.</p>
 <p>If Px_new_idx is OSQP_NULL, Px_new is assumed to be as long as P-&gt;x and the whole P-&gt;x is replaced.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace structure </p></li>
 <li><p><strong>Px_new</strong> – Vector of new elements in P-&gt;x (upper triangular) </p></li>
@@ -329,7 +332,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <li><p><strong>P_new_n</strong> – Number of new elements to be changed </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>output flag: 0: OK 1: P_new_n &gt; nnzP &lt;0: error in the update </p>
 </dd>
 </dl>
@@ -341,7 +344,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <dd><p>Update elements of matrix A without changing sparsity structure.</p>
 <p>If Ax_new_idx is OSQP_NULL, Ax_new is assumed to be as long as A-&gt;x and the whole A-&gt;x is replaced.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace structure </p></li>
 <li><p><strong>Ax_new</strong> – Vector of new elements in A-&gt;x </p></li>
@@ -349,7 +352,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <li><p><strong>A_new_n</strong> – Number of new elements to be changed </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>output flag: 0: OK 1: A_new_n &gt; nnzA &lt;0: error in the update </p>
 </dd>
 </dl>
@@ -362,7 +365,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <p>If Px_new_idx is OSQP_NULL, Px_new is assumed to be as long as P-&gt;x and the whole P-&gt;x is replaced.</p>
 <p>If Ax_new_idx is OSQP_NULL, Ax_new is assumed to be as long as A-&gt;x and the whole A-&gt;x is replaced.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>work</strong> – Workspace structure </p></li>
 <li><p><strong>Px_new</strong> – Vector of new elements in P-&gt;x (upper triangular) </p></li>
@@ -373,7 +376,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <li><p><strong>A_new_n</strong> – Number of new elements to be changed </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>output flag: 0: OK 1: P_new_n &gt; nnzP 2: A_new_n &gt; nnzA &lt;0: error in the update </p>
 </dd>
 </dl>
@@ -382,7 +385,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 </section>
 </section>
 <section id="data-types">
-<span id="c-cpp-data-types"></span><h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+<span id="c-cpp-data-types"></span><h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h2>
 <p>The most basic used datatypes are</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">c_int</span></code>: can be <code class="code docutils literal notranslate"><span class="pre">long</span></code> or <code class="code docutils literal notranslate"><span class="pre">int</span></code> if the compiler flag <code class="code docutils literal notranslate"><span class="pre">DLONG</span></code> is set or not</p></li>
@@ -390,7 +393,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 </ul>
 <p>The relevant structures used in the API are</p>
 <section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv48OSQPData">
 <span id="_CPPv38OSQPData"></span><span id="_CPPv28OSQPData"></span><span id="OSQPData"></span><span class="target" id="d9/d78/struct_o_s_q_p_data"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPData</span></span></span><a class="headerlink" href="#_CPPv48OSQPData" title="Permalink to this definition">¶</a><br /></dt>
@@ -496,7 +499,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="settings">
-<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv412OSQPSettings">
 <span id="_CPPv312OSQPSettings"></span><span id="_CPPv212OSQPSettings"></span><span id="OSQPSettings"></span><span class="target" id="d7/d93/struct_o_s_q_p_settings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPSettings</span></span></span><a class="headerlink" href="#_CPPv412OSQPSettings" title="Permalink to this definition">¶</a><br /></dt>
@@ -640,7 +643,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="solution">
-<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv412OSQPSolution">
 <span id="_CPPv312OSQPSolution"></span><span id="_CPPv212OSQPSolution"></span><span id="OSQPSolution"></span><span class="target" id="d0/dc1/struct_o_s_q_p_solution"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPSolution</span></span></span><a class="headerlink" href="#_CPPv412OSQPSolution" title="Permalink to this definition">¶</a><br /></dt>
@@ -664,7 +667,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="info">
-<h3>Info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h3>
+<h3>Info<a class="headerlink" href="#info" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv48OSQPInfo">
 <span id="_CPPv38OSQPInfo"></span><span id="_CPPv28OSQPInfo"></span><span id="OSQPInfo"></span><span class="target" id="d6/df9/struct_o_s_q_p_info"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPInfo</span></span></span><a class="headerlink" href="#_CPPv48OSQPInfo" title="Permalink to this definition">¶</a><br /></dt>
@@ -686,7 +689,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8OSQPInfo10status_valE">
 <span id="_CPPv3N8OSQPInfo10status_valE"></span><span id="_CPPv2N8OSQPInfo10status_valE"></span><span id="OSQPInfo::status_val__c_int"></span><span class="target" id="d6/df9/struct_o_s_q_p_info_1a6b61fd569619c1a0735bf9656434edfb"></span><span class="n"><span class="pre">c_int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">status_val</span></span></span><a class="headerlink" href="#_CPPv4N8OSQPInfo10status_valE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>status as c_int, defined in constants.h </p>
+<dd><p>status as c_int, defined in constants.h</p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -760,7 +763,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="workspace">
-<h3>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h3>
+<h3>Workspace<a class="headerlink" href="#workspace" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv413OSQPWorkspace">
 <span id="_CPPv313OSQPWorkspace"></span><span id="_CPPv213OSQPWorkspace"></span><span id="OSQPWorkspace"></span><span class="target" id="d6/da3/struct_o_s_q_p_workspace"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPWorkspace</span></span></span><a class="headerlink" href="#_CPPv413OSQPWorkspace" title="Permalink to this definition">¶</a><br /></dt>
@@ -985,7 +988,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="scaling">
-<h3>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h3>
+<h3>Scaling<a class="headerlink" href="#scaling" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv411OSQPScaling">
 <span id="_CPPv311OSQPScaling"></span><span id="_CPPv211OSQPScaling"></span><span id="OSQPScaling"></span><span class="target" id="db/dc0/struct_o_s_q_p_scaling"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPScaling</span></span></span><a class="headerlink" href="#_CPPv411OSQPScaling" title="Permalink to this definition">¶</a><br /></dt>
@@ -1033,7 +1036,7 @@ content="https://osqp.org/docs/_static/img/logo.png">
 
 </section>
 <section id="polish">
-<h3>Polish<a class="headerlink" href="#polish" title="Permalink to this headline">¶</a></h3>
+<h3>Polish<a class="headerlink" href="#polish" title="Permalink to this heading">¶</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv410OSQPPolish">
 <span id="_CPPv310OSQPPolish"></span><span id="_CPPv210OSQPPolish"></span><span id="OSQPPolish"></span><span class="target" id="de/d59/struct_o_s_q_p_polish"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OSQPPolish</span></span></span><a class="headerlink" href="#_CPPv410OSQPPolish" title="Permalink to this definition">¶</a><br /></dt>

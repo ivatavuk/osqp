@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CC++ &mdash; OSQP  documentation</title>
@@ -14,9 +14,8 @@
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -46,12 +45,16 @@ content="https://osqp.org/docs/_static/img/logo.png">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -97,11 +100,11 @@ content="https://osqp.org/docs/_static/img/logo.png">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Get started</a> &raquo;</li>
-      <li>CC++</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Get started</a></li>
+      <li class="breadcrumb-item active">CC++</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/get_started/C.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/osqp/osqp/blob/master/docs/get_started/C.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -110,9 +113,9 @@ content="https://osqp.org/docs/_static/img/logo.png">
            <div itemprop="articleBody">
              
   <section id="cc">
-<span id="install-osqp-libs"></span><h1>CC++<a class="headerlink" href="#cc" title="Permalink to this headline">¶</a></h1>
+<span id="install-osqp-libs"></span><h1>CC++<a class="headerlink" href="#cc" title="Permalink to this heading">¶</a></h1>
 <section id="binaries">
-<h2>Binaries<a class="headerlink" href="#binaries" title="Permalink to this headline">¶</a></h2>
+<h2>Binaries<a class="headerlink" href="#binaries" title="Permalink to this heading">¶</a></h2>
 <p>Precompiled platform-dependent shared and static libraries are available on <a class="reference external" href="https://github.com/osqp/osqp/releases">GitHub</a>.
 We here assume that the user uncompressed each archive to <code class="code docutils literal notranslate"><span class="pre">OSQP_FOLDER</span></code>.</p>
 <p>Each archive contains static <code class="code docutils literal notranslate"><span class="pre">OSQP_FOLDER/lib/libosqp.a</span></code> and shared <code class="code docutils literal notranslate"><span class="pre">OSQP_FOLDER/lib/libosqp.ext</span></code> libraries to be used to interface OSQP to any C/C++ software.
@@ -122,11 +125,11 @@ The required include files can be found in <code class="code docutils literal no
 <p>If you are interested in development builds, you can find them on <a class="reference external" href="https://github.com/osqp/osqp/releases">GitHub</a>.</p>
 </section>
 <section id="sources">
-<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this heading">¶</a></h2>
 <p>The OSQP libraries can also be compiled from sources. For more details see <a class="reference internal" href="sources.html#build-from-sources"><span class="std std-ref">Build from sources</span></a>.</p>
 </section>
 <section id="including-osqp-in-cmake-projects">
-<h2>Including OSQP in CMake projects<a class="headerlink" href="#including-osqp-in-cmake-projects" title="Permalink to this headline">¶</a></h2>
+<h2>Including OSQP in CMake projects<a class="headerlink" href="#including-osqp-in-cmake-projects" title="Permalink to this heading">¶</a></h2>
 <p>If you compiled OSQP from sources and followed the CMake installation instructions in <a class="reference internal" href="sources.html#install-the-binaries"><span class="std std-ref">Install the binaries</span></a> section, you can include the package in another CMake project with the following lines depending on whether you need a shared or a static library</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find OSQP library and headers</span>
 <span class="n">find_package</span><span class="p">(</span><span class="n">osqp</span> <span class="n">REQUIRED</span><span class="p">)</span>
